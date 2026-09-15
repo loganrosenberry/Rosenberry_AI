@@ -1,0 +1,49 @@
+# Features
+
+Battery Capacity
+Odometer_km
+Vehicle Model
+Brand
+Battery Chemistry
+Battery Failure
+
+Label
+
+Target label that I want the model to predict would be battery failure
+
+Potential training data 
+The training data would contain information about the vehicle model, brand, chemistry, odometer, capacity, and whether or not the battery failed for that instance. This is so the model can learn the patterns for when the battery fails to be able to predict future cases. Then the real world data could be something like a random real world electric car’s current state for all these features except the target label and the model then goes to predict whether the batter failed or not.
+
+
+Testing data must be kept separate
+The testing data should be kept separate from the real data so that when you input the real data the model actually makes a prediction on whether or not the car battery will fail instead of basing it on whether or not it did fail already. Basically to prevent bias of the model.
+
+
+False positive for this data
+In this case a false positive would be the model predicts that a car battery has failed when it is still actually working.
+
+
+False negative for this data
+A false negative in this case would be when the model predicts that the battery is working when it has actually died.
+
+
+Recall is more important
+I think the model having better recall is more important because it may lead to more false positives, but in this case with car battery failure I think thats okay because it would just raise the alarm and recommend that the owner goes to get maintenance, where they can find out if their battery is really fine or not. 
+
+Some poor-quality data than could affect this model
+This data set has multiple missing data points in vehicle brand and null datapoints in vehicle model which could affect the model’s predictions.
+
+
+Overfit problems
+Problems with overfitting can occur because the dataset is imbalance due to missing datapoints and null datapoints. Some of the features could also be irrelevant and make the model more biased.
+
+
+How to determine the model’s validity
+To test the model's validity simply train the model with the training data and then give it more “real world” data that contains the target label but leave out the target label. Then compare the model’s predictions to the real data and calculate the precision and recall. Again we would prefer a higher recall for our model but the precision should not be totally bad.
+
+
+Dataset used
+https://www.kaggle.com/datasets/srisyra02/ev-battery-health-prediction-dataset-20k
+
+
+
